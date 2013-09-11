@@ -5,10 +5,33 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+	<header class="bck light padding">
+		<div class="row">
+			<div class="column_6">
+				<h2 class="text italic thin">No Fat MD</h2>
+			</div>
+			<nav class="column_6 text right bold">
+				<a href="#" class="button small">Login</a>
+				<a href="#" class="button small">Signup</a>
+			</nav>
+		</div>
+	</header>
+
 </head>
 <body>
 
 <%= yield %>
 
 </body>
+
+<footer class="bck dark padding">
+		<div class="row margin-top margin-bottom">
+			<div class="column_5">
+				<p class="text blog big"></p>
+			</div>
+			<div class="column_4"></div>
+			<div class="column_3"></div>
+		</div>
+	</footer>
 </html>

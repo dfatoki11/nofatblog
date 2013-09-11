@@ -1,0 +1,33 @@
+<section class="padding">
+<div class="row">
+	<div class="column_11 offset_1">
+<h1>New Post right here!</h1>
+	</div>
+</div>
+
+<%= form_for :post, url: posts_path do |f| %>
+	<div class="row">
+		<div class="column_8 offset_2 padding bottom">
+			<p>
+				<%= f.label :title %><br>
+				<%= f.text_field :title %>
+			</p>
+
+			<p>
+				<%= f.label :author %><br>
+				<%= f.text_field :author %>
+			</p>
+
+			<p>
+				<%= f.label :text %><br>
+				<%= f.text_area :text %>
+			</p>
+
+			<p> <%= f.submit %>
+			</p>
+		</div>
+	</div>
+	
+
+<% end %>
+</section>
