@@ -15,8 +15,39 @@
 				<strong>Text:</strong>
 				<%= @post.text %>
 			</p>
-	<hr>
-		<%= link_to 'Back', posts_path, {:class => "button secondary"} %>
+
+			<h4>Comments</h4>
+			<% @post.comments.each do |comment| %>
+				<p>
+					<strong>Author:</strong>
+					<%= comment.commenter %>
+				</p>
+
+				<p>
+					<strong>Comment:</strong>
+					<%= comment.body %>
+				</p>
+			<% end %>
+	
+
+		<h3>Add a comment:</h3>
+		<%= form_for([@post, @post.comments.build]) do |f| %>
+			<P>
+				<%= f.label :commenter %><br />
+				<%= f.text_field :commenter %>
+			</p>
+			<p>
+				<%= f.label :body %><br />
+				<%= f.text_area :body %>
+			</p>
+			<p>
+				<%= f.submit %>
+			</p>
+		<% end %>
+
+		<hr>
+		<%= link_to 'Back', posts_path, {:class => "button secondary"} %> |
+		<%= link_to 'Destroy', posts_path(@post.id), method: :delete, data: { confirm: 'Are you sure?'} %> 
 			
 
 
