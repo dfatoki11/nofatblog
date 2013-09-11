@@ -6,8 +6,20 @@
 </div>
 
 <%= form_for :post, url: posts_path do |f| %>
+
 	<div class="row">
 		<div class="column_8 offset_2 padding bottom">
+			<% if @post.errors.any? %>
+			<div id="errorExplanation">
+				<h4><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h4>
+				<ul>
+					<% @post.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+			<% end %>
+		<hr>
 			<p>
 				<%= f.label :title %><br>
 				<%= f.text_field :title %>

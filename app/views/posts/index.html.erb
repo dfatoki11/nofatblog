@@ -9,6 +9,8 @@
           </h2>
           <h6> Written by <a href="#" class="text bold color"><%= post.author %></a></h6>
           <p class="text normal margin_top margin_bottom"><%= post.text %></p>
+            <%= link_to 'Show', post_path(post), {:class => "small button secondary"} %> |
+            <%= link_to 'Edit', edit_post_path(post), {:class => "small button secondary"} %>
             <hr>
           <% end %>
 
