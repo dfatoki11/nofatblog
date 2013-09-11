@@ -1,0 +1,33 @@
+<section class="padding">
+  <div class="row">
+    <div class="column_9">
+      <article class="row">
+        <div class="column_9 margin_bottom">
+          <% @posts.reverse_each do |post| %>
+          <h2>
+            <a href="#" class="text bold color"><%= post.title %></a>
+          </h2>
+          <h6> Written by <a href="#" class="text bold color"><%= post.author %></a></h6>
+          <p class="text normal margin_top margin_bottom"><%= post.text %></p>
+            <hr>
+          <% end %>
+
+        </div>
+      </article>
+    </div>
+
+    <aside class="column_3">
+      <h5 class="text normal">Categories</h5>
+      <nav class="margin-bottom">
+        <a href="#" class="display block color">Healthy Foods</a>
+        <a href="#" class="display block color">Tales from the VA</a>
+        <a href="#" class="display block color">Weight Loss Blog</a>
+      </nav>
+      <div class="bck dark padding color white margin-bottom">
+        <h5 class="text normal">Featured News</h5>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      </div>
+
+    </aside>
+  </div>
+</section>

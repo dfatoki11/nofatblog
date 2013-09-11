@@ -3,20 +3,15 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.new(params[:post].permit(:title, :author, :text))
+		@post = Post.create(params[:post].permit(:title, :author, :text))
 
-		if @post.save
+		if @post.save!
 			redirect_to @post
 		else
 			render action: :new
 		end
 		
 	end
-
-	private
-		def post_params
-			params.require(:post).permit(:title, :author, :text)
-		end
 
 	def show
 		@post = Post.find(params[:id])
@@ -25,6 +20,12 @@ class PostsController < ApplicationController
 	def index
 		@posts =Post.all 
 	end
+
+	private
+		def post_params
+			params.require(:post).permit(:title, :author, :text)
+		end
+
 
 
 end
