@@ -27,6 +27,11 @@
 					<strong>Comment:</strong>
 					<%= comment.body %>
 				</p>
+
+				<%= link_to 'Destroy Comment', [comment.post, comment], 
+							:confirm => 'Are you sure?',
+							:method => :delete,
+							:class => "small button secondary" %>
 			<% end %>
 	
 
@@ -46,8 +51,12 @@
 		<% end %>
 
 		<hr>
-		<%= link_to 'Back', posts_path, {:class => "button secondary"} %> |
-		<%= link_to 'Destroy', posts_path(@post.id), method: :delete, data: { confirm: 'Are you sure?'} %> 
+		<%= link_to 'Back', posts_path, {:class => "small button secondary"} %> |
+		<%= link_to 'Edit', edit_post_path, {:class => "small button secondary"} %> |
+		<%= link_to 'Destroy', [@post], 
+					:confirm => 'Are you sure?', 
+					:method => :delete,
+					:class => "small button secondary"%> 
 			
 
 
