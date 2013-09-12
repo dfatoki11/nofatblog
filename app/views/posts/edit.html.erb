@@ -33,11 +33,12 @@
     <%= f.text_area :text %>
   </p>
  
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+    <%= f.submit :class => "small button secondary" %> |
+  
  
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Back', posts_path,
+              :class => "small button secondary" %>
+
+  <% end %>
 </div>
 </div>

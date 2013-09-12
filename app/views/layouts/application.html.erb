@@ -21,17 +21,25 @@
 </head>
 <body>
 
+	<p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
 <%= yield %>
 
 </body>
 
 <footer class="bck dark padding">
 		<div class="row margin-top margin-bottom">
-			<div class="column_5">
-				<p class="text blog big"></p>
+			<div class="row">
+			<div class="column_11">
+				<h2 class="text italic thin"></h2>
 			</div>
-			<div class="column_4"></div>
-			<div class="column_3"></div>
+			<nav class="column_1 text right bold">
+				<% if user_signed_in? %>
+					<%= link_to 'Logout', destroy_user_session_path(@user), method: :delete , :class => "button small" %>
+				<% else %>
+				<% end %>
+			</nav>
 		</div>
 	</footer>
 </html>
