@@ -1,7 +1,13 @@
+<section class="padding">
+<div class="row">
+  <div class="column_11 offset_1">
 <h1>Editing post</h1>
+  </div>
+</div>
  
-<%= form_for :post, url: post_path(@post.id) }
-method: :patch do |f| %>
+<%= form_for (@post) do |f| %>
+<div class="row">
+    <div class="column_8 offset_2 padding bottom">
   <% if @post.errors.any? %>
   <div id="errorExplanation">
     <h2><%= pluralize(@post.errors.count, "error") %> prohibited
@@ -17,6 +23,10 @@ method: :patch do |f| %>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </p>
+  <p>
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </p>
  
   <p>
     <%= f.label :text %><br>
@@ -29,3 +39,5 @@ method: :patch do |f| %>
 <% end %>
  
 <%= link_to 'Back', posts_path %>
+</div>
+</div>
