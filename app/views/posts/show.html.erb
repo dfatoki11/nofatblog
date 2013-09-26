@@ -1,20 +1,16 @@
 <section class="padding">
 	<div class="row">
-		<div class="column_8 offset_2 padding bottom">
-			<p>
-				<strong>Title:</strong>
-				<%= @post.title %>
-			</p>
+		<div class="column_8 offset_2 padding-bottom">
+			<div class="margin-bottom">
+				<h2><%= @post.title %></h2>
+				<h6> Written by <a href="#" class="text bold color"><%= @post.author %></a></h6>
+			</div>
 
-			<p>
-				<strong>Author:</strong>
-				<%= @post.author %>
-			</p>
-
-			<p>
-				<strong>Text:</strong>
+			<div class="content">
 				<%= @post.text %>
-			</p>
+			</div>
+
+		<hr>
 
 			<h4>Comments</h4>
 			<% @post.comments.each do |comment| %>
@@ -34,8 +30,6 @@
 							:class => "small button secondary" %>
 			<% end %>
 	
-
-		<h3>Add a comment:</h3>
 		<%= form_for([@post, @post.comments.build]) do |f| %>
 			<P>
 				<%= f.label :commenter %><br />
@@ -50,13 +44,17 @@
 			</p>
 		<% end %>
 
+
 		<hr>
-		<%= link_to 'Back', posts_path, {:class => "small button secondary"} %> |
-		<%= link_to 'Edit', edit_post_path, {:class => "small button secondary"} %> |
-		<%= link_to 'Destroy', [@post], 
+		<%= link_to 'Back', posts_path, {:class => "small button secondary"} %> 
+		<% if user_signed_in? %>
+		|
+			<%= link_to 'Edit', edit_post_path, {:class => "small button secondary"} %> |
+			<%= link_to 'Destroy', [@post], 
 					:confirm => 'Are you sure?', 
 					:method => :delete,
 					:class => "small button secondary"%> 
+		<% end %>
 			
 
 

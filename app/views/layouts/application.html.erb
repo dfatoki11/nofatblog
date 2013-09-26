@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>blog</title>
+  <title>No Fat MD</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -9,11 +9,12 @@
 	<header class="bck light padding">
 		<div class="row">
 			<div class="column_6">
-				<h2 class="text italic thin">No Fat MD</h2>
+				<h2><%= link_to 'No Fat MD', posts_path, {:class => "text italic thin"} %></h2>
 			</div>
 			<nav class="column_6 text right bold">
 				<%= link_to 'Home', posts_path, {:class => "button small"} %>
-				<%= link_to 'About Me', posts_path, {:class => "button small"} %>
+				<%= link_to 'About Me', webpages_about_path, {:class => "button small"} %>
+				<%= link_to 'Contact', webpages_contact_path, {:class => "button small"} %>
 			</nav>
 		</div>
 	</header>
