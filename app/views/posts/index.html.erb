@@ -1,6 +1,10 @@
 <section class="padding">
   <div class="row">
     <div class="column_9">
+      <% if user_signed_in? %>
+      <%= link_to 'Create New Post', new_post_path, {:class => "large button secondary"} %>
+        <hr>
+        <% end %>
       <article class="row">
         <div class="column_9 margin-bottom">
           <% @posts.reverse_each do |post| %>
@@ -29,6 +33,9 @@
         <h5 class="text normal">Featured News</h5>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       </div>
+
+      <span class="icon twitter-sign"></span>
+      <span class="icon facebook-sign"></span>
 
     </aside>
   </div>
