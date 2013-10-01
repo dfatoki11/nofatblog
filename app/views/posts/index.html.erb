@@ -8,10 +8,10 @@
       <article class="row">
         <div class="column_9 margin-bottom">
           <% @posts.reverse_each do |post| %>
-          <h2>
+          <h1>
             <%= link_to post.title, post_path(post) %>
-          </h2>
-          <h6> Written by <a href="#" class="text bold color"><%= post.author %></a></h6>
+          </h1>
+          <h6 class="text bold color"> Written by <%= post.author %></h6>
           <div class="margin-top">
             <p class="text normal"><%= post.text %></p>
           </div>
@@ -34,8 +34,10 @@
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       </div>
 
-      <span class="icon twitter-sign"></span>
-      <span class="icon facebook-sign"></span>
+
+      <a class="twitter-timeline" href="https://twitter.com/Obesity_Doc" data-widget-id="384869328241192961">Tweets by @Obesity_Doc</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
 
     </aside>
   </div>
