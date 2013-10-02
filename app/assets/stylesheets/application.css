@@ -10,4 +10,8 @@
  *
  *= require_self
  *= require_tree .
+ *= require tuktuk.css
+ *= require tuktuk.icons.css
+ *= require tuktuk.theme.css
+ 
  */
