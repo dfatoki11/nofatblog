@@ -11,18 +11,3 @@
  *= require_self
  *= require_tree .
  */
-.content {
-	border: .1em dotted black;
-	padding: .3em;
-}
-
-.small {
-	font-family: cursive;
-	color: black;
-	font-size: 9px;
-}
-
-.image {
-  max-width: 141px;
-  max-height: 191px;
-}
