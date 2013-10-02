@@ -16,6 +16,7 @@ Blog::Application.routes.draw do
 
     get "webpages/about"
     get "webpages/contact"
+    get "posts/search"
 
     resources :posts do 
       resources :comments
