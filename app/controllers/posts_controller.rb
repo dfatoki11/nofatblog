@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.new(params[:post].permit(:title, :author, :text))
+		@post = Post.create(params[:post].permit(:title, :author, :text))
 
 		if @post.save
 			redirect_to @post
@@ -13,14 +13,16 @@ class PostsController < ApplicationController
 		
 	end
 
-	private
-		def post_params
-			params.require(:post).permit(:title, :author, :text)
-		end
-
 	def show
 		@post = Post.find(params[:id])
 	end
+
+	private
+	def post_params
+		params.require(:post).permit(:title, :author, :text)
+	end
+
+	
 
 	def index
 		@posts =Post.all 
