@@ -11,7 +11,7 @@
 
 .image {
   max-width: 141px;
-  max-height: 191px;
+  max-height: 192px;
 }
 
 [data-tuktuk=boxes]{display:-webkit-box;display:-moz-box;display:-ms-box;display:-o-box;display:box;-webkit-box-pack:justify;-moz-box-pack:justify;-ms-box-pack:justify;-o-box-pack:justify;box-pack:justify;overflow:hidden;}
