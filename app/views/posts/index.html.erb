@@ -13,7 +13,7 @@
           </h1>
           <h6 class="text bold color"> Written by <%= post.author %></h6>
           <div class="margin-top">
-            <p class="text normal"><%= post.text %></p>
+            <p class="text normal"><%= @str = post.text.html_safe %></p>
           </div>
           <% if user_signed_in? %>
           <div class="margin-top">
@@ -30,7 +30,7 @@
 
     <aside class="column_3">
       <div class="bck dark padding color white margin-bottom">
-        <h5 class="text normal">Featured News</h5>
+        <h4 class="text normal">Featured News</h4>
           <p class="book">Dr. Fatoki's first published book<br> <span class="text italic">The Fatoki Protocol: It's All About the 1/3 </span><br> is now available!</p>
           <div class="fatoki padding-top padding-left"><a href="http://www.amazon.com/The-Fatoki-Protocol-Its-about/dp/0988628902"><%= image_tag("book.jpg", :width => "140px", :height => "210px")%></a></div>
       </div>
