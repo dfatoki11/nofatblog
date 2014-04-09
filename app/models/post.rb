@@ -4,8 +4,9 @@ class Post < ActiveRecord::Base
 					  length: { minimum: 5}
 	validates :author, presence: true
 	validates :text, presence: true
+	validates :category, presence:true
 
-	attr_accessible :title, :author, :text
+	attr_accessible :title, :author, :text, :category
 
 	# It returns the articles whose titles contain one or more words that form the query
   def self.search(query)

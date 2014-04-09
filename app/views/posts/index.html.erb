@@ -7,7 +7,8 @@
         <% end %>
       <article class="row">
         <div class="column_9 margin-bottom">
-          <% @posts.reverse_each do |post| %>
+          <% @posts.each do |post| %>
+          <%# @posts.reverse_each do |post| (REVERSES ORDER) %>
           <h1>
             <%= link_to post.title, post_path(post) %>
           </h1>
